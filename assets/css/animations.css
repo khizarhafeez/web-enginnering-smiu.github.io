@@ -1,0 +1,439 @@
+/*==================================================================
+  ADVANCED UI LAYER — animated background + glassmorphism + motion
+  Loaded after main.css, so variables/rules here take priority.
+==================================================================*/
+
+:root {
+  /* Slightly lifted for better readability over the animated bg */
+  --color-text: #a4a4ac;
+  --color-accent: #1e90ff;
+  --glass-bg: rgba(255, 255, 255, 0.045);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-blur: 14px;
+}
+
+/*------------------------------------------------------------------
+  Animated background: canvas network + gradient orbs + grid
+------------------------------------------------------------------*/
+#bg-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -3;
+  background: var(--color-bg-primary);
+  pointer-events: none;
+}
+
+.bg-orbs {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 42rem;
+  height: 42rem;
+  top: -10%;
+  left: -8%;
+  background: radial-gradient(circle at 30% 30%, var(--color-primary), transparent 70%);
+  animation: orbFloat1 22s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 36rem;
+  height: 36rem;
+  top: 35%;
+  right: -12%;
+  background: radial-gradient(circle at 60% 40%, var(--color-accent), transparent 70%);
+  animation: orbFloat2 26s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 30rem;
+  height: 30rem;
+  bottom: -12%;
+  left: 30%;
+  background: radial-gradient(circle at 50% 50%, #9f7aea, transparent 70%);
+  animation: orbFloat3 30s ease-in-out infinite;
+}
+
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6vw, 8vh) scale(1.15); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-7vw, 6vh) scale(1.1); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(4vw, -6vh) scale(1.2); }
+}
+
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 40%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 20%, #000 40%, transparent 90%);
+}
+
+/* subtle glow that follows the cursor (desktop only) */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26rem;
+  height: 26rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 171, 117, 0.10), transparent 70%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor-glow.is-active {
+    opacity: 1;
+  }
+}
+
+/*------------------------------------------------------------------
+  Scroll progress bar
+------------------------------------------------------------------*/
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  z-index: 2000;
+  transition: width 0.1s ease-out;
+}
+
+/*------------------------------------------------------------------
+  Global text / links
+------------------------------------------------------------------*/
+body {
+  color: var(--color-text);
+}
+
+.nav__brand span {
+  color: var(--color-white);
+}
+
+.hero__title {
+  background: linear-gradient(100deg, #ffffff 30%, var(--color-primary) 55%, var(--color-accent) 75%, #ffffff 100%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shineText 8s linear infinite;
+  text-shadow: 0 8px 40px rgba(37, 171, 117, 0.18);
+}
+
+@keyframes shineText {
+  to { background-position: -250% center; }
+}
+
+#typewriter {
+  text-shadow: 0 0 14px rgba(30, 144, 255, 0.35);
+}
+
+/*------------------------------------------------------------------
+  Glassmorphism cards
+------------------------------------------------------------------*/
+.skills__content,
+.service__card,
+.project__content,
+.qualification__item,
+.contact__card {
+  background: var(--glass-bg) !important;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 16px;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s ease,
+              border-color 0.45s ease;
+}
+
+.qualification__item {
+  padding: 2rem;
+}
+
+/* Service cards */
+.service__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(140deg, rgba(255, 255, 255, 0.06), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.service__card:hover,
+.qualification__item:hover,
+.skills__content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(37, 171, 117, 0.25);
+  border-color: rgba(37, 171, 117, 0.4);
+}
+
+.service__card:hover::before {
+  opacity: 1;
+}
+
+/* Project cards */
+.project__content {
+  padding: 1.4rem;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.project__content .project__img {
+  border-radius: 10px;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project__content:hover {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(30, 144, 255, 0.3);
+  border-color: rgba(30, 144, 255, 0.4);
+}
+
+.project__content:hover .project__img {
+  transform: scale(1.06);
+}
+
+.contact__card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+
+.contact__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(37, 171, 117, 0.3) !important;
+}
+
+/*------------------------------------------------------------------
+  Skill tags — little animated chips instead of plain list rows
+------------------------------------------------------------------*/
+.skills__item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.6rem 0.8rem 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border);
+  font-size: var(--fs-sm);
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.skills__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills__item i {
+  color: var(--color-primary);
+}
+
+.skills__item:hover {
+  transform: translateY(-3px);
+  background: rgba(37, 171, 117, 0.12);
+  border-color: rgba(37, 171, 117, 0.45);
+  color: var(--color-white);
+}
+
+/*------------------------------------------------------------------
+  Buttons — glow + shine sweep
+------------------------------------------------------------------*/
+.btn--primary,
+.btn--secondary,
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn--primary::after,
+.btn--secondary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.65s ease;
+}
+
+.btn--primary:hover::after,
+.btn--secondary:hover::after {
+  left: 130%;
+}
+
+/*------------------------------------------------------------------
+  Hero image glow ring
+------------------------------------------------------------------*/
+.hero__img {
+  box-shadow:
+    0 0 0 10px rgba(37, 171, 117, 0.08),
+    0 0 60px rgba(37, 171, 117, 0.25),
+    0 20px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+/*------------------------------------------------------------------
+  Header
+------------------------------------------------------------------*/
+.header {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.nav__link {
+  position: relative;
+}
+
+.nav__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  transition: width 0.35s ease;
+}
+
+.nav__link:hover::after,
+.nav__link--active::after {
+  width: 100%;
+}
+
+.nav__link--active {
+  color: var(--color-primary);
+}
+
+/*------------------------------------------------------------------
+  Section subtitle underline — animate in on scroll
+------------------------------------------------------------------*/
+.section__subtitle::after {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+}
+
+/*------------------------------------------------------------------
+  Back to top button
+------------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  right: 2.4rem;
+  bottom: 2.4rem;
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.9rem;
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+  cursor: pointer;
+  z-index: 1500;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  box-shadow: 0 14px 32px rgba(37, 171, 117, 0.45);
+  transform: translateY(-4px);
+}
+
+/*------------------------------------------------------------------
+  Mobile overflow safety net
+------------------------------------------------------------------*/
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/*------------------------------------------------------------------
+  Scrollbar
+------------------------------------------------------------------*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--color-primary), var(--color-accent));
+  border-radius: 10px;
+}
+
+/*------------------------------------------------------------------
+  Reduced motion
+------------------------------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  .orb,
+  .hero__title,
+  .hero__img {
+    animation: none !important;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .back-to-top {
+    right: 1.6rem;
+    bottom: 1.6rem;
+    width: 4rem;
+    height: 4rem;
+  }
+  .orb {
+    filter: blur(60px);
+    opacity: 0.25;
+  }
+}
