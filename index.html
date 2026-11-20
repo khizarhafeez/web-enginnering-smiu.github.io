@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="title" content="Muhammad Khizar - Full Stack Developer Portfolio">
+    <meta name="description"
+        content="Discover Muhammad Khizar's professional portfolio showcasing expertise in full-stack development, web applications, and innovative solutions. Explore projects, skills, and achievements.">
+    <meta name="keywords"
+        content="Muhammad Khizar, Full Stack Developer, Software Engineer, Portfolio, Web Development, Front-End Developer, JavaScript, HTML CSS, Software Engineering, Karachi Pakistan, Professional Portfolio">
+    <meta name="author" content="Muhammad Khizar">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/img/my image.png">
+    <title>Muhammad Khizar Portfolio</title>
+    <!--=================== Main CSS ====================-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <!--=================== Animated UI CSS ====================-->
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <!--=================== Google Fonts ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!--=================== Remixicons ====================-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!--=================== SwiperJS CSS ====================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+<body>
+
+    <!--=================== Animated Background Layer ====================-->
+    <canvas id="bg-canvas"></canvas>
+    <div class="bg-orbs" aria-hidden="true">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+    <div class="grid-overlay" aria-hidden="true"></div>
+    <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+    <!--=================== Page Load Progress Bar ====================-->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!--=================== Header ====================-->
+    <header id="header" class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="nav__brand">
+                    <i class="ri-code-s-slash-line"></i>Muhammad<span>Khizar</span>
+                </a>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#hero" class="nav__link">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#qualification" class="nav__link">Qualification</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#services" class="nav__link">Services</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#project" class="nav__link">Projects</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" class="nav__link">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="nav__toggle">
+                    <i id="nav-toggle" class="ri-menu-3-line"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!--=================== main ====================-->
+    <main class="main">
+        <!--=================== Hero ====================-->
+        <section id="hero" class="hero">
+            <div class="container">
+                <div class="d-grid hero__wrapper">
+                    <div class="hero__content">
+                        <h1 class="hero__title">Hi, I am Muhammad Khizar, a Full Stack Developer.
+                        </h1>
+                        <h2 id="typewriter"
+                            style="font-size: 25px; font-weight: bold; color: #1e90ff; border-right: 2px solid #1e90ff; white-space: nowrap; overflow: hidden; display: inline-block;">
+                        </h2>
+                        <p style="margin-top:15px;" class="hero__description">🌟 Passionate Certified Web Developer and
+                            Computer Science student
+                            🎓, dedicated to crafting user-centric websites and web apps 💻.
+                            Proficient in many programming languages 👨‍💻, delivering top-notch, responsive, and
+                            visually stunning websites . A quick learner and problem-solving enthusiast , driven by
+                            creativity and strategic thinking 💡. Currently exploring opportunities to contribute skills
+                            and collaborate on dynamic projects 🤝.
+                        </p>
+                        <a href="mailto:khizhafeez75@gmail.com" class="btn--primary"
+                            style="padding:1.5rem 4rem;margin-bottom:10px;display:inline-block;">Hire Me!</a>
+                        <div class="hero__info">
+                          
+                        </div>
+                    </div>
+                    <img src="assets/img/my image.png" alt="Muhammad Khizar" class="hero__img">
+                </div>
+            </div>
+        </section>
+        <!--=================== About ====================-->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">About Me</h2>
+                    <span class="section__subtitle">Who am I</span>
+                </div>
+                <div class="d-grid about__wrapper">
+                    <div class="about__content">
+                        <h3 class="about__title">I'm a Professional and Experienced Software Developer.</h3>
+                        <p class="about__description">I have a strong focus on creating intuitive and efficient software
+                            solutions to meet the needs of clients and end-users.
+                            When I'm not coding, I love to stay up-to-date with the latest technology trends and
+                            imporiving my skills.
+                            I'm always eager to take new challenges and work with a team to deliver exceptional results.
+                        </p>
+                        <a href="#project" class="btn btn--primary">Know More</a>
+                    </div>
+                    <div class="skills">
+                        <h3 class="skills__title">Technologies I've been working with:</h3>
+                        <div class="skills__wrapper">
+                            <div class="skills__content">
+                                <h4 class="skills__subtitle">Backend</h4>
+                                <ul class="skills__list">
+
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        PHP</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Asp.net</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Database management</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        MySQL</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        API Development</li> 
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Ai implementation</li>   
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Testing</li>     
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Design/Solid Principles</li>     
+                                     <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Security</li>   
+                                     <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Software Architecture</li> 
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Object-Oriented Programming</li> 
+                                      <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Data structures & Algorithms</li>
+                                      <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        C++/C#</li> 
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Management</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        SQA</li>  
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Flutter</li>    
+
+                                </ul>
+                            </div>
+                            <div class="skills__content">
+                                <h4 class="skills__subtitle">Frontend</h4>
+                                <ul class="skills__list">
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        HTML</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        CSS</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        JavaScript</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Bootstrap</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Ui/Ux</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Tailwind css</li>
+                                    <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Angular</li> 
+                                     <li class="skills__item"><i class="ri-arrow-right-s-fill"></i>
+                                        Agile/Scrum</li>            
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=================== Qualification ====================-->
+        <section id="qualification" class="section qualification">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Qualification</h2>
+                    <span class="section__subtitle">Experience & Education</span>
+                </div>
+                <!--============== Professional Experience ============-->
+                <div class="qualification__wrapper">
+                    <h3 class="qualification__name">
+                        <i class="ri-briefcase-fill"></i>
+                        Professional Experience
+                    </h3>
+                    <div class="d-grid qualification__content">
+                        <!-- Experience 1-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Web Developer (Remote)</h3>
+                            <h4 class="qualification__title">Ocktech, Karachi</h4>
+                            <p class="qualification__description">Currently working as a remote Web Developer,
+                                responsible for designing, developing, and maintaining responsive web applications.
+                                Key contributions include front-end development using modern JavaScript frameworks,
+                                backend integration, and performance optimization, while collaborating with
+                                cross-functional teams to deliver scalable, user-friendly solutions.
+                            </p>
+                        </div>
+                        <!-- Experience 2-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Web Developer Intern</h3>
+                            <h4 class="qualification__title">Ocktech Software House, Karachi</h4>
+                            <p class="qualification__description">Designed and optimized user interfaces for 3+ web
+                                projects using HTML, CSS, and Bootstrap, enhancing load speeds by 20%. Collaborated
+                                with senior developers to implement responsive UI for cross-platform compatibility,
+                                resolved 10+ UI/UX bugs using Chrome DevTools, and contributed to version control
+                                with Git while improving front-end structure using TailwindCSS.
+                            </p>
+                            <span class="qualification__date">Jun 2024 — Aug 2024</span>
+                        </div>
+                        <!-- Experience 3-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Software Engineering Intern</h3>
+                            <h4 class="qualification__title">Karachi Port Trust, Karachi</h4>
+                            <p class="qualification__description">During my internship at Karachi Port Trust, I gained hands-on experience in software development, contributing to the design and implementation of internal applications. 
+                                I collaborated with a team of developers to enhance existing systems, troubleshoot issues, and optimize performance. This experience allowed me to apply my academic knowledge in a real-world setting,
+                                 improving my problem-solving skills and understanding of software engineering practices.
+                            </p>
+                            <span class="qualification__date">July 2026 — Aug 2026</span>
+                        </div>
+                    </div>
+                </div>
+                <!--============== Education ============-->
+                <div class="qualification__wrapper">
+                    <h3 class="qualification__name">
+                        <i class="ri-booklet-fill"></i>
+                        Education
+                    </h3>
+                    <div class="d-grid qualification__content">
+                        <!-- Education 1-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Bachelor's in Software Engineering</h3>
+                            <h4 class="qualification__title">Sindh Madressatul Islam University</h4>
+                            <p class="qualification__description">As a software engineering student, I have a strong
+                                foundation in object-oriented algorithms, data structures, software design and
+                                Development.
+                                My coursework has provided me with a deep understanding of the principles and practices
+                                of computer science,
+                                and I have honed my programming skills through various projects and assignments.
+                            </p>
+                            <span class="qualification__date">Completed on 2027</span>
+                        </div>
+                        <!-- Education 2-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Advance diploma in Software Engineering</h3>
+                            <h4 class="qualification__title">Aptech Learning Pakistan</h4>
+                            <p class="qualification__description">Graduated with Distinction, gaining hands-on
+                                skills across HTML5, CSS, JavaScript, Bootstrap, jQuery, and Angular, along with
+                                cloud services (Microsoft Azure), full-stack development (PHP, Laravel, MERN,
+                                .NET Core), and databases (SQL Server, MongoDB).
+                            </p>
+                            <span class="qualification__date">Completed Jan 2025</span>
+                        </div>
+                        <!-- Education 3-->
+                        <div class="qualification__item">
+                            <h3 class="qualification__title">Higher Secondary Education</h3>
+                            <p class="qualification__description">I completed my Higher Secondary Certificate (HSC) in Pre-Engineering,
+                                 where I developed a strong foundation in mathematics, physics, and analytical thinking,
+                                  enhancing my problem-solving abilities.
+                            </p>
+                            <p class="qualification__description">
+                            </p>
+                            <span class="qualification__date">Completed in 2023</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="qualification__footer">
+                    <p class="qualification__footer-text">See my full resume</p>
+                    <a href="M.Khizar junior software engineer.pdf" class="btn btn--primary" target="_blank">Resume</a>
+                </div>
+            </div>
+        </section>
+
+        <!--=================== services ====================-->
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Services</h2>
+                    <span class="section__subtitle">What I Offer</span>
+                </div>
+                <div class="service__grid">
+                    <!-- Front-End Development -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#4299e1;">
+                            <i class="ri-layout-4-fill service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Front-End Development</h3>
+                        <p class="service__description">Creating responsive and interactive user
+                            interfaces using modern web technologies.</p>
+                    </div>
+
+                    <!-- UI/UX Design -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#9f7aea;">
+                            <i class="ri-pen-nib-fill service__icon"></i>
+                        </div>
+                        <h3 class="service__title">UI/UX Design</h3>
+                        <p class="service__description">Designing intuitive and visually appealing user
+                            experiences for web and mobile applications.</p>
+                    </div>
+
+                    <!-- Full-Stack Projects -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#48bb78;">
+                            <i class="ri-code-s-slash-line service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Full-Stack Projects</h3>
+                        <p class="service__description">Developing end-to-end web applications with both
+                            front-end and back-end functionalities.</p>
+                    </div>
+
+                    <!-- Mobile App Development -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#319795;">
+                            <i class="ri-smartphone-line service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Mobile App Development</h3>
+                        <p class="service__description">Building user-friendly mobile applications for
+                            Android platforms using Flutter and React Native.</p>
+                    </div>
+
+                    <!-- Software Testing & QA -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#f56565;">
+                            <i class="ri-bug-fill service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Software Testing &amp; QA</h3>
+                        <p class="service__description">Manual &amp; automated testing, test case design, and
+                            defect analysis using Selenium and industry best practices.</p>
+                    </div>
+
+                    <!-- Social Media Marketing -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#ecc94b;">
+                            <i class="ri-share-fill service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Social Media Marketing</h3>
+                        <p class="service__description">Promoting and managing businesses on platforms
+                            like Facebook, Instagram, Twitter, and LinkedIn.</p>
+                    </div>
+
+                    <!-- MS Office Services -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#5a67d8;">
+                            <i class="ri-file-fill service__icon"></i>
+                        </div>
+                        <h3 class="service__title">MS Office Services</h3>
+                        <p class="service__description">Expertise in MS Word, Excel, PowerPoint, and
+                            Power BI for business productivity solutions.</p>
+                    </div>
+
+                    <!-- Graphic Designing Services -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#d45757;">
+                            <i class="ri-palette-line service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Graphic Designing Services</h3>
+                        <p class="service__description">Delivering innovative designs to elevate your
+                            brand and captivate your audience using Adobe software, Canva, and AI tools.</p>
+                    </div>
+
+                    <!-- Other Miscellaneous Services -->
+                    <div class="service__card">
+                        <div class="service__icon-box" style="--icon-color:#00ccff;">
+                            <i class="ri-lightbulb-flash-fill service__icon"></i>
+                        </div>
+                        <h3 class="service__title">Other Miscellaneous Services</h3>
+                        <p class="service__description">Providing tailored solutions and custom services
+                            for any unique requirements. You name it, we'll make it happen!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--=================== Projects ====================-->
+        <section id="project" class="section project">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">Projects</h2>
+                    <span class="section__subtitle">My recent work</span>
+                </div>
+                <div class="d-grid project__wrapper">
+                    <!--============== project 1 =============-->
+                    <div class="project__content">
+                        <img src="assets/img/hawk shoe.PNG" alt="Hawk's Shoe" class="project__img">
+                        <a href="https://khizarhafeezhawkshoes.netlify.app/" class="project__link">
+                            <h3 class="project__title">Hawk's Shoe</h3>
+                        </a>
+                        <p class="project__description">E-commerce website for a shoe store, built with HTML, CSS, and JavaScript.</p>
+                        <a href="https://khizarhafeezhawkshoes.netlify.app/" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!--============== project 2 =============-->
+                    <div class="project__content">
+                        <img src="assets/img/furnitre.PNG" alt="Furniture Store" class="project__img">
+                        <a href="https://khizar-furniture-web.netlify.app/" class="project__link">
+                            <h3 class="project__title">DF Furniture</h3>
+                        </a>
+                        <p class="project__description">Furniture e-commerce website built with HTML, CSS, and JavaScript.</p>
+                        <a href="https://khizar-furniture-web.netlify.app/" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!--============== project 3 =============-->
+                    <div class="project__content">
+                        <img src="assets/img/weather.PNG" alt="Weather App" class="project__img">
+                        <a href="https://khizar-weather-app.netlify.app/" class="project__link">
+                            <h3 class="project__title">Weather App</h3>
+                        </a>
+                        <p class="project__description">A weather application that provides real-time weather information for any location.</p>
+                        <a href="" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!-- ============== project 4 ============= -->
+                    <div class="project__content">
+                        <img src="assets/img/face.PNG" alt="Face Biometric Attendance System" class="project__img">
+                        <a href="https://face-attendence-system.free.nf/login.php" class="project__link">
+                            <h3 class="project__title"> Face Biometric Attendance Management System</h3>
+                        </a>
+                        <p class="project__description">A comprehensive solution for managing attendance using face recognition technology.</p>
+                        <a href="https://face-attendence-system.free.nf/login.php" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!-- ============== project 5 ============= -->
+                    <div class="project__content">
+                        <img src="assets/img/pak railway.PNG" alt="Pakistan Railway Clone" class="project__img">
+                        <a href="https://pakistanrailwayclonebykhizar.netlify.app/" class="project__link">
+                            <h3 class="project__title"> Pakistan Railway Clone</h3>
+                        </a>
+                        <p class="project__description">A clone of the Pakistan Railway website built using modern web technologies.</p>
+                        <a href="https://pakistanrailwayclonebykhizar.netlify.app" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                     <!-- ============== project 6 ============= -->
+                    <div class="project__content">
+                        <img src="assets/img/DSA.PNG" alt="Monte Cristo DSA" class="project__img">
+                        <a href="https://monte-cristo-dsa-khizar.netlify.app/" class="project__link">
+                            <h3 class="project__title"> Monte Cristo DSA</h3>
+                        </a>
+                        <p class="project__description">NLP-based text classification using *The Count of Monte Cristo* with TF-IDF and machine learning.</p>
+                        <a href="https://monte-cristo-dsa-khizar.netlify.app/" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                    <!-- ============== project 7 ============= -->
+                    <div class="project__content">
+                        <img src="assets/img/my portfolio.PNG" alt="My Own Portfolio" class="project__img">
+                        <a href="" class="project__link">
+                            <h3 class="project__title">My own Portfolio</h3>
+                        </a>
+                        <p class="project__description">A personal portfolio website showcasing my skills and projects.</p>
+                        <a href="" class="project__link">View Project
+                            <i class="ri-arrow-right-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--=================== Contact ====================-->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="d-grid contact__wrapper">
+                    <div class="contact__content">
+                        <h2 class="contact__title">Interested in working together? Let's talk</h2>
+                        <p class="contact__description">
+                            Ready to work together on your next software project? I'd love to hear from you!
+                            Feel free to get in touch using the contact information below.
+                            Whether uou have a specific project in mind or just want to chat about your software
+                            development needs , I am here to help.
+                            I will respond to your message as quickly as possible and look forward to connecting with
+                            you soon.
+                        </p>
+                    </div>
+                    <div class="contact__btn">
+                        <a style="align-items:center; gap:10px; text-align:center;"
+                            href="https://www.linkedin.com/in/muhammad-khizar-97ab77284" target="_blank" class="btn btn--secondary">Get in touch
+                            <i class="fa-solid fa-handshake"></i></a>
+                    </div>
+                </div>
+                <!-- Contact Card -->
+                <div
+                    style="display: flex; font-family: 'Montserrat', sans-serif; margin-top: 10px;">
+                    <div style="flex: 0 1 700px; margin: auto; padding: 10px; width: 100%;">
+                        <div class="contact__card"
+                            style="position: relative; background: #3e3e3e; border-radius: 15px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); width: 100%; overflow: hidden;">
+                            <div style="height: 6px; background: linear-gradient(90deg, #25ab75, #1e90ff);"></div>
+                            <div
+                                style="display: flex; align-items: center; padding: 10px 20px; background: #4d4d4f;">
+                                <div style="margin-right: auto;">
+                                    <div
+                                        style="display: inline-block; width: 8px; height: 8px; margin-right: 3px; border-radius: 8px; background: #ed1c6f;">
+                                    </div>
+                                    <div
+                                        style="display: inline-block; width: 8px; height: 8px; margin-right: 3px; border-radius: 8px; background: #e8e925;">
+                                    </div>
+                                    <div
+                                        style="display: inline-block; width: 8px; height: 8px; border-radius: 8px; background: #74c54f;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="padding: 32px;">
+                                <div style="font-size: 26px; font-weight: 700; color: #ffffff; margin-bottom: 12px;">
+                                    Contact Me
+                                </div>
+                                <p style="color: #b0b0b0; font-weight: 400; letter-spacing: normal; line-height: 1.6; margin-bottom: 24px;">
+                                    Feel free to reach out to Muhammad Khizar Hafeez for the services you want —
+                                    I'll get back to you as soon as possible.
+                                </p>
+                                <div style="display: flex; flex-direction: column; gap: 16px;">
+                                    <a href="https://www.linkedin.com/in/muhammad-khizar-97ab77284" target="_blank"
+                                        style="display: flex; align-items: center; gap: 12px; color: #ffffff; font-weight: 500; letter-spacing: normal;">
+                                        <i class="fa-brands fa-linkedin-in" style="font-size: 22px; color: #1e90ff;"></i>
+                                        LinkedIn: <span style="color: #1e90ff;">muhammad-khizar-97ab77284</span>
+                                    </a>
+                                    <a href="mailto:khizhafeez75@gmail.com"
+                                        style="display: flex; align-items: center; gap: 12px; color: #ffffff; font-weight: 500; letter-spacing: normal;">
+                                        <i class="fa-regular fa-envelope" style="font-size: 22px; color: #25ab75;"></i>
+                                        Gmail: <span style="color: #25ab75;">khizhafeez75@gmail.com</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--=================== footer ====================-->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="d-grid footer__wrapper"
+                style="display:flex;justify-content:center; align-items:center; text-align:center;">
+                <div class="footer__content">
+                    <h4 class="footer__title">Follow Me</h4>
+                    <ul class="footer__social-list">
+                        <li class="footer__social-item">
+                            <a href="mailto:khizhafeez75@gmail.com" target="_blank" class="footer__social-link">
+                                <i class="fa-regular fa-envelope fa-beat-fade"></i>
+                            </a>
+                        </li>
+
+                        <li class="footer__social-item">
+                            <a href="https://wa.me/923112577591" target="_blank" class="footer__social-link">
+                                <i class="fa-brands fa-whatsapp fa-beat-fade"></i>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://www.instagram.com/muhammad_khizar_hafeez?igsh=MXFmbHpiOG96ZGI0cw==" target="_blank"
+                                class="footer__social-link">
+                                <i class="fa-brands fa-instagram fa-beat-fade"></i>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://www.linkedin.com/in/muhammad-khizar-97ab77284" target="_blank" class="footer__social-link">
+                                <i class="fa-brands fa-linkedin-in fa-beat-fade"></i>
+                            </a>
+                        </li>
+                        <li class="footer__social-item">
+                            <a href="https://x.com/BaigKhizar43570" target="_blank" class="footer__social-link">
+                                <i class="fa-brands fa-square-x-twitter fa-fade"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <p class="footer__copyright">&copy; {currentYear} Muhammad Khizar. All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!--=================== Back to top ====================-->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <!--=================== SwiperJS  ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!--=================== ScrollReveal ==================-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--=================== Main JS ====================-->
+    <script src="assets/js/main.js"></script>
+
+    <!--=================== Animated UI JS ====================-->
+    <script src="assets/js/animations.js"></script>
+</body>
+
+</html>
